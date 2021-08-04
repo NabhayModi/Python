@@ -1,10 +1,10 @@
 import csv
 import pandas as pd
-import plotly.figure_factory as ff
+import plotly.express as px
 
 df =      pd.read_csv('HeightWeight.csv')
 
-fig=ff.create_distplot([df["Height(Inches)"].tolist()],['Height'],show_hist=False)
+fig = px.scatter(df,x='Height',y='Weight')
 
 
 fig.show()
